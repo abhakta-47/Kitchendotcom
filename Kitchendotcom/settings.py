@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
+    # 'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,10 +78,17 @@ WSGI_APPLICATION = 'Kitchendotcom.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URI':'ostgres://bauvzkafuhednu:c07dfc6f70c9de5edefac7d5fe7d99d1d105bb29e2dbd7025291a695d1667e5b@ec2-44-198-223-154.compute-1.amazonaws.com:5432/des9kplbkmes9e',
+        'NAME': 'des9kplbkmes9e',
+        'USER': 'bauvzkafuhednu',
+        'PASSWORD': 'c07dfc6f70c9de5edefac7d5fe7d99d1d105bb29e2dbd7025291a695d1667e5b',
+        'HOST': 'ec2-44-198-223-154.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
