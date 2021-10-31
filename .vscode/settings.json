@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "**/templates/*/*.html": "django-html"
+    },
+    "json.schemas": [
+    
+    ],
+    "emmet.includeLanguages": {
+        "django-html": "html"
+     },
+     "beautify.language": {
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
+    },
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "editor.formatOnSave": true,
+    "python.pythonPath": "Kitchendotcomenv/bin/python",
+}
